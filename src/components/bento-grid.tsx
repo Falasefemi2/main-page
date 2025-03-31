@@ -1,7 +1,7 @@
-import frame2 from "../assets/Frame 6.png"
-import frame4 from "../assets/Frame 11.png"
-import frame5 from "../assets/image1.png"
-import frame6 from "../assets/image2.png"
+import frame2 from "../assets/Frame 6.png";
+import frame4 from "../assets/Frame 11.png";
+import frame5 from "../assets/image1.png";
+import frame6 from "../assets/image2.png";
 
 const BentoGrid = () => {
     return (
@@ -20,60 +20,58 @@ const BentoGrid = () => {
                     </p>
                 </div>
 
-                {/* Bento Grid Layout with adjusted sizing */}
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-                    {/* Properties Card - Shorter, takes 5/12 of the grid */}
-                    <div className="md:col-span-5 relative  rounded-2xl overflow-hidden h-64 md:h-auto">
-                        <div className="w-full h-full">
+                    {/* Properties Card */}
+                    <div className="md:col-span-5 relative rounded-2xl overflow-hidden">
+                        {/* Added  for mobile, md:aspect-auto to reset on larger screens */}
+                        <div className="w-full h-full  md:aspect-auto">
                             <img
                                 src={frame2 || "/placeholder.svg"}
                                 alt="Modern building interior"
-                                className="w-full h-full object-cover rounded-2xl"
+                                className="w-full h-full object-cover rounded-2xl" // Keep object-cover
                             />
                         </div>
-
                     </div>
 
-                    {/* Cargo & Logistics Card - Stretched, takes 7/12 of the grid and taller */}
-                    <div className="md:col-span-7 relative  rounded-2xl overflow-hidden h-64 md:h-auto">
-                        <div className="w-full h-full">
+                    {/* Cargo & Logistics Card */}
+                    <div className="md:col-span-7 relative rounded-2xl overflow-hidden">
+                        {/* Added  for mobile, md:aspect-auto to reset on larger screens */}
+                        <div className="w-full h-full  md:aspect-auto">
                             <img
                                 src={frame6 || "/placeholder.svg"}
                                 alt="Delivery person on motorcycle"
-                                className="w-full h-full object-cover rounded-2xl"
+                                className="w-full h-full object-cover rounded-2xl" // Keep object-cover
                             />
                         </div>
-
                     </div>
 
-                    {/* Energy Card - Rectangle, takes 7/12 of the grid */}
-                    <div className="md:col-span-7 relative  rounded-2xl overflow-hidden h-64 md:h-auto">
-                        <div className="w-full h-full">
+                    {/* Energy Card */}
+                    <div className="md:col-span-7 relative rounded-2xl overflow-hidden">
+                        {/* Added  for mobile, md:aspect-auto to reset on larger screens */}
+                        <div className="w-full h-full  md:aspect-auto">
                             <img
                                 src={frame5 || "/placeholder.svg"}
                                 alt="Solar panels at sunset"
-                                className="w-full h-full object-cover rounded-2xl"
+                                className="w-full h-full object-cover rounded-2xl" // Keep object-cover
                             />
                         </div>
-
                     </div>
 
-                    {/* Agric Card - Square, takes 5/12 of the grid */}
-                    <div className="md:col-span-5 relative  rounded-2xl overflow-hidden h-64 md:h-auto">
-                        <div className="w-full h-full">
+                    {/* Agric Card */}
+                    <div className="md:col-span-5 relative rounded-2xl overflow-hidden">
+                        {/* Added  for mobile, md:aspect-auto to reset on larger screens */}
+                        <div className="w-full h-full  md:aspect-auto">
                             <img
                                 src={frame4 || "/placeholder.svg"}
                                 alt="Grain products"
-                                className="w-full h-full object-cover rounded-2xl"
+                                className="w-full h-full object-cover rounded-2xl" // Keep object-cover
                             />
                         </div>
-
                     </div>
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default BentoGrid
-
+export default BentoGrid;
