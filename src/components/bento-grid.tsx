@@ -2,6 +2,7 @@ import frame2 from "../assets/Frame 6.png";
 import frame4 from "../assets/Frame 11.png";
 import frame5 from "../assets/image1.png";
 import frame6 from "../assets/image2.png";
+import { Link } from "react-router";
 
 const BentoGrid = () => {
     return (
@@ -24,49 +25,49 @@ const BentoGrid = () => {
                     {/* Properties Card */}
                     <div className="md:col-span-5 relative rounded-2xl overflow-hidden">
                         {/* Added  for mobile, md:aspect-auto to reset on larger screens */}
-                        <div className="w-full h-full  md:aspect-auto">
+                        <Link to="https://harlivia-properties.vercel.app" className="w-full h-full  md:aspect-auto">
                             <img
                                 src={frame2 || "/placeholder.svg"}
                                 alt="Modern building interior"
                                 className="w-full h-full object-cover rounded-2xl" // Keep object-cover
                             />
-                        </div>
+                        </Link>
                     </div>
 
                     {/* Cargo & Logistics Card */}
                     <div className="md:col-span-7 relative rounded-2xl overflow-hidden">
                         {/* Added  for mobile, md:aspect-auto to reset on larger screens */}
-                        <div className="w-full h-full  md:aspect-auto">
+                        <Link to="https://harlivia-cargo.vercel.app" className="w-full h-full  md:aspect-auto">
                             <img
                                 src={frame6 || "/placeholder.svg"}
                                 alt="Delivery person on motorcycle"
                                 className="w-full h-full object-cover rounded-2xl" // Keep object-cover
                             />
-                        </div>
+                        </Link>
                     </div>
 
                     {/* Energy Card */}
                     <div className="md:col-span-7 relative rounded-2xl overflow-hidden">
                         {/* Added  for mobile, md:aspect-auto to reset on larger screens */}
-                        <div className="w-full h-full  md:aspect-auto">
+                        <Link to="https://harlivia-energy.vercel.app" className="w-full h-full  md:aspect-auto">
                             <img
                                 src={frame5 || "/placeholder.svg"}
                                 alt="Solar panels at sunset"
                                 className="w-full h-full object-cover rounded-2xl" // Keep object-cover
                             />
-                        </div>
+                        </Link>
                     </div>
 
                     {/* Agric Card */}
                     <div className="md:col-span-5 relative rounded-2xl overflow-hidden">
                         {/* Added  for mobile, md:aspect-auto to reset on larger screens */}
-                        <div className="w-full h-full  md:aspect-auto">
+                        <Link to="https://harlivia-agric.vercel.app" className="w-full h-full  md:aspect-auto">
                             <img
                                 src={frame4 || "/placeholder.svg"}
                                 alt="Grain products"
                                 className="w-full h-full object-cover rounded-2xl" // Keep object-cover
                             />
-                        </div>
+                        </Link>
                     </div>
                 </div>
             </div>
