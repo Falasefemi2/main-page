@@ -113,7 +113,7 @@ export default function ServiceCarousel() {
     }
 
     return (
-        <div className="w-full py-8 md:py-12 bg-white">
+        <div className="w-full py-8 md:py-12 bg-white dark:bg-gray-950">
             <div className="container mx-auto px-4">
                 <div className="relative">
                     {/* Carousel container */}
@@ -131,7 +131,7 @@ export default function ServiceCarousel() {
                     >
                         {services.map((service) => (
                             <div key={service.id} className="min-w-[85%] sm:min-w-[60%] md:min-w-[40%] lg:min-w-[30%] p-2 snap-start">
-                                <div className={`relative h-64 rounded-lg overflow-hidden`}>
+                                <div className={`relative h-64 rounded-lg overflow-hidden shadow-lg dark:shadow-gray-900/30`}>
                                     {/* Background image with overlay */}
                                     <div className="absolute inset-0 z-0">
                                         <img
@@ -140,7 +140,6 @@ export default function ServiceCarousel() {
                                             className="object-cover"
                                         />
                                     </div>
-
                                 </div>
                             </div>
                         ))}
@@ -152,7 +151,9 @@ export default function ServiceCarousel() {
                             <button
                                 key={index}
                                 onClick={() => setActiveIndex(index)}
-                                className={`h-2 rounded-full transition-all ${activeIndex === index ? "w-8 bg-[#335CFF]" : "w-2"
+                                className={`h-2 rounded-full transition-all ${activeIndex === index
+                                    ? "w-8 bg-[#335CFF] dark:bg-blue-500"
+                                    : "w-2 bg-gray-300 dark:bg-gray-700"
                                     }`}
                                 aria-label={`Go to slide ${index + 1}`}
                             />

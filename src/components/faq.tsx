@@ -30,22 +30,22 @@ export default function FAQSection() {
     ]
 
     return (
-        <div className="w-full bg-[#F7F7F7] px-4 py-12">
+        <div className="w-full bg-[#F7F7F7] dark:bg-gray-900 px-4 py-12">
             <div className="container mx-auto px-4">
-                <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+                <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm dark:shadow-gray-900/30 overflow-hidden">
                     <div className="grid lg:grid-cols-2 items-start">
                         {/* FAQ Section */}
                         <div className="p-8 space-y-6">
                             {/* <h2 className="text-primary text-sm font-medium">• Frequently asked questions</h2> */}
-                            <button className="flex items-center gap-2 mb-2 bg-[#F7F7F7] rounded-lg p-2">
+                            <button className="flex items-center gap-2 mb-2 bg-[#F7F7F7] dark:bg-gray-700 rounded-lg p-2">
                                 <div className="w-2 h-2 rounded-full bg-[#4CAF50]"></div>
-                                <h2 className="text-[#333333] text-[18px] font-semibold">Frequently asked questions</h2>
+                                <h2 className="text-[#333333] dark:text-gray-100 text-[18px] font-semibold">Frequently asked questions</h2>
                             </button>
                             <Accordion type="single" collapsible className="w-full">
                                 {faqs.map((faq, index) => (
                                     <AccordionItem key={index} value={`item-${index}`}>
-                                        <AccordionTrigger className="text-left text-[#000000] font-medium">{faq.question}</AccordionTrigger>
-                                        <AccordionContent className="text-[#767676] font-light">{faq.answer}</AccordionContent>
+                                        <AccordionTrigger className="text-left text-[#000000] dark:text-white font-medium">{faq.question}</AccordionTrigger>
+                                        <AccordionContent className="text-[#767676] dark:text-gray-400 font-light">{faq.answer}</AccordionContent>
                                     </AccordionItem>
                                 ))}
                             </Accordion>
