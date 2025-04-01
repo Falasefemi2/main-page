@@ -6,12 +6,13 @@ import Footer from './components/footer'
 import Header from './components/header'
 import HeroSection from './components/hero'
 import ServiceCarousel from './components/service-carousel'
+import { ThemeProvider } from "./components/theme-provider"
 
 function App() {
 
 
   return (
-    <>
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <Header />
       <HeroSection />
       <ServiceCarousel />
@@ -19,7 +20,7 @@ function App() {
       <FeaturesGrid />
       <FAQSection />
       <Footer />
-    </>
+    </ThemeProvider>
   )
 }
 
