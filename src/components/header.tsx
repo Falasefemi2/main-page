@@ -49,41 +49,48 @@ export default function Header() {
                             </button>
 
                             {isDropdownOpen && (
-                                <div
-                                    className="absolute max-h-svw left-0 right-0 mt-6 mx-4 sm:mx-6 lg:mx-8 rounded-md shadow-lg bg-white dark:bg-gray-800  z-10 border-0"
-
-                                >
-                                    <div className="p-4 grid grid-cols-3 gap-4">
-                                        <a href="#" className="block p-4 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
-                                            <div className="flex items-center gap-3">
-                                                <span className="text-blue-600 dark:text-blue-400">
-                                                    <img src={prop} alt="Properties Icon" />
+                                <div className="absolute left-0 right-0 mt-6 bg-white dark:bg-gray-800 z-10 border-b border-gray-200 dark:border-gray-700">
+                                    {/* Inner container (Grid): Centered with max-width */}
+                                    <div className="px-8 py-4 grid grid-cols-3 gap-4">
+                                        {/* Properties Link */}
+                                        <a href="#" className="block py-4 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
+                                            <div className="flex items-start gap-3">
+                                                <span className="text-blue-600 dark:text-blue-400 pt-1">
+                                                    {/* Ensure images have consistent size, e.g., className="w-6 h-6" */}
+                                                    <img src={prop || "/placeholder.svg"} alt="Properties Icon" className="w-6 h-6" />
                                                 </span>
                                                 <div>
                                                     <div className="font-medium text-base text-[#0E121B] dark:text-gray-100">Properties</div>
                                                     <div className="text-sm text-[#525866] dark:text-gray-400">
-                                                        We do more than just real estate, <br />We create elevated living experiences.
+                                                        We do more than just real estate, <br />
+                                                        We create elevated living experiences.
                                                     </div>
                                                 </div>
                                             </div>
                                         </a>
-                                        <a href="#" className="block p-4 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
-                                            <div className="flex items-center gap-3">
-                                                <span className="text-green-600 dark:text-green-400">
-                                                    <img src={cargo} alt="Cargo & Logistics Icon" />
+
+                                        {/* Cargo & Logistics Link */}
+                                        <a href="#" className="block py-4 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
+                                            <div className="flex items-start gap-3">
+                                                <span className="text-green-600 dark:text-green-400 pt-1">
+                                                    <img src={cargo || "/placeholder.svg"} alt="Cargo & Logistics Icon" className="w-6 h-6" />
                                                 </span>
                                                 <div>
-                                                    <div className="font-medium text-base text-[#0E121B] dark:text-gray-100">Cargo & Logistics</div>
+                                                    <div className="font-medium text-base text-[#0E121B] dark:text-gray-100">
+                                                        Cargo & Logistics
+                                                    </div>
                                                     <div className="text-sm text-[#525866] dark:text-gray-400">
                                                         Our expertise ensures that your goods <br /> reach their destination safely and on time.
                                                     </div>
                                                 </div>
                                             </div>
                                         </a>
-                                        <a href="#" className="block p-4 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
-                                            <div className="flex items-center gap-3">
-                                                <span className="text-amber-500 dark:text-amber-400">
-                                                    <img src={energy} alt="Energy Icon" />
+
+                                        {/* Energy Link */}
+                                        <a href="#" className="block py-4 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
+                                            <div className="flex items-start gap-3">
+                                                <span className="text-amber-500 dark:text-amber-400 pt-1">
+                                                    <img src={energy || "/placeholder.svg"} alt="Energy Icon" className="w-6 h-6" />
                                                 </span>
                                                 <div>
                                                     <div className="font-medium text-base text-[#0E121B] dark:text-gray-100">Energy</div>
@@ -93,21 +100,21 @@ export default function Header() {
                                                 </div>
                                             </div>
                                         </a>
-                                        <div className="col-span-3">
-                                            <a href="#" className="block p-4 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
-                                                <div className="flex items-center gap-3">
-                                                    <span className="text-green-500 dark:text-green-400">
-                                                        <img src={agric} alt="Agric Icon" />
-                                                    </span>
-                                                    <div>
-                                                        <div className="font-medium text-base text-gray-900 dark:text-gray-100">Agric</div>
-                                                        <div className="text-sm text-[#525866] dark:text-gray-400">
-                                                            We bring you the finest in quality, taste, and <br /> satisfaction.
-                                                        </div>
+
+                                        {/* Agric Link */}
+                                        <a href="#" className="block py-4 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
+                                            <div className="flex items-start gap-3">
+                                                <span className="text-green-500 dark:text-green-400 pt-1">
+                                                    <img src={agric || "/placeholder.svg"} alt="Agric Icon" className="w-6 h-6" />
+                                                </span>
+                                                <div>
+                                                    <div className="font-medium text-base text-gray-900 dark:text-gray-100">Agric</div>
+                                                    <div className="text-sm text-[#525866] dark:text-gray-400">
+                                                        We bring you the finest in quality, taste, and <br /> satisfaction.
                                                     </div>
                                                 </div>
-                                            </a>
-                                        </div>
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
                             )}
@@ -163,7 +170,7 @@ export default function Header() {
 
             {/* Mobile menu */}
             {isMenuOpen && (
-                <div className="md:hidden">
+                <div className="md:hidden" ref={dropdownRef}>
                     <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                         <div className="relative">
                             <button
@@ -177,24 +184,16 @@ export default function Header() {
                             </button>
 
                             {isDropdownOpen && (
-                                <div className="pl-4">
-                                    <a href="#" className="block p-4 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
-                                        <div className="flex items-center gap-3">
-                                            <span className="text-blue-600 dark:text-blue-400">
-                                                <svg
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    width="24"
-                                                    height="24"
-                                                    viewBox="0 0 24 24"
-                                                    fill="none"
-                                                    stroke="currentColor"
-                                                    strokeWidth="2"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                >
-                                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                                    <path d="M3 9h18"></path>
-                                                </svg>
+                                <div>
+                                    {/* Properties Link */}
+                                    <a href="#" className="block py-4 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
+                                        {/* Changed items-center to items-start */}
+                                        <div className="flex items-start gap-3">
+                                            <span className="text-blue-600 dark:text-blue-400 pt-1">
+                                                {" "}
+                                                {/* Optional: Added pt-1 for slight adjustment if needed */}
+                                                {/* Consider adding explicit size to img for consistency, e.g., className="w-6 h-6" */}
+                                                <img src={prop || "/placeholder.svg"} alt="Properties Icon" className="w-6 h-6" />
                                             </span>
                                             <div>
                                                 <div className="font-medium text-base text-gray-900 dark:text-gray-100">Properties</div>
@@ -204,24 +203,16 @@ export default function Header() {
                                             </div>
                                         </div>
                                     </a>
-                                    <a href="#" className="block p-4 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
-                                        <div className="flex items-center gap-3">
-                                            <span className="text-green-600 dark:text-green-400">
-                                                <svg
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    width="24"
-                                                    height="24"
-                                                    viewBox="0 0 24 24"
-                                                    fill="none"
-                                                    stroke="currentColor"
-                                                    strokeWidth="2"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                >
-                                                    <path d="M4 11a9 9 0 0 1 9 9"></path>
-                                                    <path d="M4 4a16 16 0 0 1 16 16"></path>
-                                                    <circle cx="5" cy="19" r="2"></circle>
-                                                </svg>
+
+                                    {/* Cargo & Logistics Link */}
+                                    <a href="#" className="block py-4 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
+                                        {/* Changed items-center to items-start */}
+                                        <div className="flex items-start gap-3">
+                                            <span className="text-green-600 dark:text-green-400 pt-1">
+                                                {" "}
+                                                {/* Optional: Added pt-1 */}
+                                                {/* Consider adding explicit size to img */}
+                                                <img src={cargo || "/placeholder.svg"} alt="Cargo & Logistics Icon" className="w-6 h-6" />
                                             </span>
                                             <div>
                                                 <div className="font-medium text-base text-gray-900 dark:text-gray-100">Cargo & Logistics</div>
@@ -231,30 +222,16 @@ export default function Header() {
                                             </div>
                                         </div>
                                     </a>
-                                    <a href="#" className="block p-4 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
-                                        <div className="flex items-center gap-3">
-                                            <span className="text-amber-500 dark:text-amber-400">
-                                                <svg
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    width="24"
-                                                    height="24"
-                                                    viewBox="0 0 24 24"
-                                                    fill="none"
-                                                    stroke="currentColor"
-                                                    strokeWidth="2"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                >
-                                                    <circle cx="12" cy="12" r="5"></circle>
-                                                    <path d="M12 1v2"></path>
-                                                    <path d="M12 21v2"></path>
-                                                    <path d="M4.2 4.2l1.4 1.4"></path>
-                                                    <path d="M18.4 18.4l1.4 1.4"></path>
-                                                    <path d="M1 12h2"></path>
-                                                    <path d="M21 12h2"></path>
-                                                    <path d="M4.2 19.8l1.4-1.4"></path>
-                                                    <path d="M18.4 5.6l1.4-1.4"></path>
-                                                </svg>
+
+                                    {/* Energy Link */}
+                                    <a href="#" className="block py-4 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
+                                        {/* Changed items-center to items-start */}
+                                        <div className="flex items-start gap-3">
+                                            <span className="text-amber-500 dark:text-amber-400 pt-1">
+                                                {" "}
+                                                {/* Optional: Added pt-1 */}
+                                                {/* Consider adding explicit size to img */}
+                                                <img src={energy || "/placeholder.svg"} alt="Energy Icon" className="w-6 h-6" />
                                             </span>
                                             <div>
                                                 <div className="font-medium text-base text-gray-900 dark:text-gray-100">Energy</div>
@@ -264,28 +241,17 @@ export default function Header() {
                                             </div>
                                         </div>
                                     </a>
-                                    <a href="#" className="block p-4 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
-                                        <div className="flex items-center gap-3">
-                                            <span className="text-green-500 dark:text-green-400">
-                                                <svg
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    width="24"
-                                                    height="24"
-                                                    viewBox="0 0 24 24"
-                                                    fill="none"
-                                                    stroke="currentColor"
-                                                    strokeWidth="2"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                >
-                                                    <path d="M6.8 22 12 13l5.2 9H6.8Z"></path>
-                                                    <path d="M9 9h6l-3 4.5L9 9Z"></path>
-                                                    <path d="M12 2v2"></path>
-                                                    <path d="M4.93 5.93l1.41 1.41"></path>
-                                                    <path d="M2 13h2"></path>
-                                                    <path d="M19.07 5.93l-1.41 1.41"></path>
-                                                    <path d="M20 13h2"></path>
-                                                </svg>
+
+                                    {/* Agric Link */}
+                                    <a href="#" className="block py-4 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
+                                        {/* Ensure this div still has items-start */}
+                                        <div className="flex items-start gap-3">
+                                            <span className="text-green-500 dark:text-green-400 pt-1">
+                                                {" "}
+                                                {/* Keep or adjust pt-1 */}
+                                                {/* --- Add width and height classes here --- */}
+                                                <img src={agric || "/placeholder.svg"} alt="Agric Icon" className="w-6 h-6" />
+                                                {/* --- Make sure to add the same w-6 h-6 (or chosen size) to the other images too! --- */}
                                             </span>
                                             <div>
                                                 <div className="font-medium text-base text-gray-900 dark:text-gray-100">Agric</div>
